@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Origami</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="lib/origami.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+  </head>
+  <body>
+
+    <!-- Title -->
+
+    <h1>Origami</h1>
+    <div class="subtitle">
+      Make pretty 'folding' animations using suites or equations.
+    </div>
+
+    <!-- Examples -->
+
+		<div id="affine" class="box">
+			<div class="back">
+        <div>f(x) = 10x + 10</div>
+			</div>
+			<img src="http://lorempixel.com/400/400" />
+		</div>
+
+    <div id="polynome" class="box">
+      <div class="back">
+        <div>f(x) = 5x ^ 2 + 10</div>
+      </div>
+      <img src="http://lorempixel.com/400/400" />
+    </div>
+
+    <div id="cosinus" class="box">
+      <div class="back">
+        <div>f(x) = cos(60x) * 42</div>
+      </div>
+      <img src="http://lorempixel.com/400/400" />
+    </div>
+
+    <div id="tangente" class="box">
+      <div class="back">
+        <div>f(x) = tan(21x) * 21</div>
+      </div>
+      <img src="http://lorempixel.com/400/400" />
+    </div>
+
+    <div id="droite" class="box">
+      <div class="back">
+        <div>U0 = 60 <small>and</small> Un+1 = Un</div>
+      </div>
+      <img src="http://lorempixel.com/400/400" />
+    </div>
+
+    <div id="saw" class="box">
+      <div class="back">
+        <div>U0 = 60 <small>and</small> Un+1 = -Un</div>
+      </div>
+      <img src="http://lorempixel.com/400/400" />
+    </div>
+
+    <!-- Include jquery -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <!-- ...and origami plugin -->
+
+    <script src="lib/origami.js"></script>
+
+    <!-- finaly use it into your own script! -->
+
+    <script src="js/demo.js"></script>
+
+    <!-- Github ribbon -->
+    <a href="https://github.com/jeremiet/origami"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+  </body>
+</html>

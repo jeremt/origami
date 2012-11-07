@@ -1,0 +1,38 @@
+
+body {
+	font-family: helvetica, sans-serif;
+}
+
+h1 {
+	font-size: 4em;
+	margin-bottom: 20px;
+}
+
+.subtitle {
+	color: rgba(0, 0, 0, .5);
+	font-style: italic;
+	margin-bottom: 40px;
+}
+
+h1, .subtitle {
+	text-align: center;
+}
+
+.box {
+	margin: 100px auto;
+	padding: 10px;
+	background: rgba(0, 0, 0, .1);
+	-moz-perspective: 1000px;
+}
+
+.back {
+	background: rgba(0, 0, 0, .1);
+	color: rgba(0, 0, 0, .8);
+	width: 60%;
+}
+
+.back > div {
+	-webkit-transform: translate(80px, 140px) rotate(90deg);
+	font-size: 21px;
+	color: rgba(0, 0, 0, .5);
+}
