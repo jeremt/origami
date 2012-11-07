@@ -1,7 +1,7 @@
 Origami
 =======
 
-Make pretty 'folding' animations using suites or equations.
+Make pretty 'folding' animations using suites or equations. Take a look at the [demo](http://jeremiet.github.com/origami).
 
 HOW TO
 ------
