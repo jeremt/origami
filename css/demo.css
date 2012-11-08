@@ -33,6 +33,10 @@ h1, .subtitle {
 
 .back > div {
 	-webkit-transform: translate(80px, 140px) rotate(90deg);
+	-moz-transform: translate(80px, 140px) rotate(90deg);
+	-ms-transform: translate(80px, 140px) rotate(90deg);
+	-o-transform: translate(80px, 140px) rotate(90deg);
+	transform: translate(80px, 140px) rotate(90deg);
 	font-size: 21px;
 	color: rgba(0, 0, 0, .5);
 }
