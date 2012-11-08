@@ -5,7 +5,41 @@ Make pretty 'folding' animations using suites or equations. Take a look at the [
 
 HOW TO
 ------
-Coming soon...
+Add jquery into your html page :
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+```
+Next, add `origami.css` and `origami.js`:
+```html
+<script src="lib/origami.min.js"></script>
+<script src="lib/origami.min.js"></script>
+```
+Eventualy, use it!
+```js
+$('#your-elem').origami({
+  f: function (x) {
+    return 10 * x + 10; // f(x) = 10x + 10
+  }
+});
+```
+Markup:
+```html
+<div id="your-elem">
+  <!-- Add `back` class to the elem behind -->
+  <div class="back">
+    Hello world!
+  </div>
+  <!-- ...then add your image -->
+  <img src="path/to/img">
+</div> <!-- #your-elem -->
+```
+### Options
+- __f__ - equation to use to create the curve
+- __suite__ - suite to use (instead of equation)
+- __delay__ - animation delay (ms)
+- __shadows__ - boolean to activate or not the shadows
+- __width__ - elem width
+- __height__ - elem height
 
 TODO
 ----
