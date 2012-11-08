@@ -5,18 +5,21 @@ Make pretty 'folding' animations using suites or equations. Take a look at the [
 
 HOW TO
 ------
-Add jquery into your html page :
+Add jquery into your html page:
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 ```
 Next, add `origami.css` and `origami.js`:
 ```html
-<script src="lib/origami.min.js"></script>
-<script src="lib/origami.min.js"></script>
+<link rel="stylesheet" href="path/to/origami.min.css"></script>
+<script src="path/to/origami.min.js"></script>
 ```
 Eventualy, use it!
 ```js
 $('#your-elem').origami({
+  width: 400,
+  height: 300,
+  delay: 35,
   f: function (x) {
     return 10 * x + 10; // f(x) = 10x + 10
   }
@@ -40,11 +43,6 @@ Markup:
 - __shadows__ - boolean to activate or not the shadows
 - __width__ - elem width
 - __height__ - elem height
-
-TODO
-----
-- Add lightness according the angle (with css3 gradients)
-- Debug delay/easing on 'droite'
 
 License
 -------
