@@ -25,11 +25,7 @@
 
 .foldable .overlay {
   height: 100%;
-  -webkit-transition: opacity 150ms ease-in-out;
-  -moz-transition: opacity 150ms ease-in-out;
-  -o-transition: opacity 150ms ease-in-out;
-  -ms-transition: opacity 150ms ease-in-out;
-  transition: opacity 150ms ease-in-out;
+  position: absolute;
 }
 
 .foldable:hover .overlay {

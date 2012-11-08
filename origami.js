@@ -12,7 +12,7 @@
 
   // Simple div to test css properties
 
-  var el = document.createElement('div')
+  var el = document.createElement('div');
 
   // Get vendor prefix
 
@@ -128,17 +128,43 @@
     // Overlay
 
     $overlays.css({
-      opacity: 0,
-      position: 'absolute'
+      width: fragWidth,
+      opacity: 0
     });
 
-    $($overlays.selector + ':hover').css({
-      opacity: 1
-    });
+    $overlays.css(vendor({
+       transition: 'opacity '+ (opts.delay || 42) / 100 +'s ease-in-out'
+    }));
 
     /**
      * Animate according `type` of animation
      */
+
+    // Add some helpers to add shadows
+    if (opts.shadows) {
+
+      var gradient = function (from, to) {
+        var s = '';
+
+        s += 'linear-gradient(right,rgba(0, 0, 0, '+from+') 0%,'
+        s += 'rgba(0, 0, 0, '+to+') 100%)';
+        return prefix + s;
+      };
+
+      var contrast = function (arr, coef) {
+        var result, i, val;
+
+        result = [];
+        for (i = 0 ; i < arr.length ; i++) {
+          val = (arr[i] - 0.5) * coef + 0.5;
+          if (val < 0) val = 0;
+          else if (val > 1) val = 1;
+          result.push(val);
+        }
+        return result;
+      };
+
+    }
 
     // Generate pts from equation
     if (opts.f) {
@@ -174,14 +200,39 @@
       var translate = 'translate3d(' + (fragWidth - 1) + 'px,0,0)'
         , move
 
+      // Transform
+
       $frags.each(function (i, frag) {
         move = 'rotate3d(0,1,0,' + -(pts[i] - (pts[i - 1] || 0)) + 'deg)';
         if (i) move = translate + ' ' + move;
         $(frag).css(vendor({
           'transform': move,
-          'transition-delay': (opts.frags - i - 1) * 50 + 'ms'
+          'transition-delay': (opts.frags - i - 1) * (opts.delay || 42) + 'ms'
         }));
       });
+
+      if (!opts.shadows)
+        return ;
+
+      // Lighting
+
+      var arr = []
+        , alpha
+        , prev = 0.6
+
+      for (var i = 0 ; pts[i] ; i++)
+        arr.push(1 - (((pts[i] + 180) / 360) % 1));
+
+      arr = contrast(arr, 2);
+      $overlays.each(function (i, overlay) {
+        alpha = arr[i];
+        $(overlay).css({
+          'background': gradient(alpha, prev),
+          'opacity': 1
+        });
+        prev = alpha;
+      });
+
     };
 
     // When unhovered...
@@ -197,6 +248,10 @@
           'transform': move
         }));
       });
+
+      if (opts.shadows)
+        $overlays.css({'opacity': '0'});
+
     };
 
     // Bind hover event!
