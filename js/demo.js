@@ -29,8 +29,6 @@ $( '#cosinus' ).origami({
   frags: 10,
   f: function (x) {
     var eq = Math.cos(x * 84) * 66;
-    console.log('value: ' + eq);
-    console.log('value2: ' + x * x * 5);
     return eq;
   }
 });
@@ -43,7 +41,8 @@ $( '#tangente' ).origami({
   frags: 10,
   f: function (x) {
     return Math.tan(x * 21) * 21;
-  }
+  },
+  shadows: true // voir pourquoi ca bug ici...
 });
 
 // Suite 'droite'
@@ -56,7 +55,9 @@ $( '#droite' ).origami({
     type: 'geo',
     n: 60,
     pas: 1
-  }
+  },
+  shadows: true,
+  delay: 10
 });
 
 // Suite 'dents de scie'
@@ -69,5 +70,7 @@ $( '#saw' ).origami({
     type: 'geo',
     n: 60,
     pas: -1
-  }
+  },
+  shadows: true,
+  delay: 20
 });
