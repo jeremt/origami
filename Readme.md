@@ -16,7 +16,8 @@ Next, add `origami.css` and `origami.js`:
 ```
 Eventualy, use it!
 ```js
-$('#your-elem').origami({
+// Create animation...
+var anim = $('#your-elem').origami({
   width: 400,
   height: 300,
   delay: 35,
@@ -24,6 +25,9 @@ $('#your-elem').origami({
     return 10 * x + 10; // f(x) = 10x + 10
   }
 });
+// ...and trigger it :)
+$('#on').on('click', anim.on);
+$('#off').on('click', anim.off);
 ```
 Markup:
 ```html
