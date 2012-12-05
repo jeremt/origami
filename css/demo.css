@@ -1,42 +1,59 @@
 
+@font-face {
+	font-family: 'Origami';
+	src: url('../font/Origami.ttf');
+}
+
 body {
-	font-family: helvetica, sans-serif;
+	font-family: monospace;
+	background: rgba(0, 0, 0, .8);
 }
 
 h1 {
-	font-size: 4em;
+	font-family: 'Origami', helvetica, sans-serif;
+	color: rgba(255, 255, 255, .8);
+	font-size: 4.2em;
+	font-weight: normal;
+	text-align: center;
 	margin-bottom: 20px;
 }
 
 .subtitle {
-	color: rgba(0, 0, 0, .5);
-	font-style: italic;
-	margin-bottom: 40px;
-}
-
-h1, .subtitle {
+	color: rgba(255, 255, 255, .6);
 	text-align: center;
+	font-size: 1.2em;
 }
 
-.box {
-	margin: 100px auto;
-	padding: 10px;
-	background: rgba(0, 0, 0, .1);
-	-moz-perspective: 1000px;
+#example, #dashboard {
+	width: 500px;
+	margin: 20px auto;
+	border-radius: 20px 0 20px 0;
+	background: rgba(0, 0, 0, .2);
+	padding: 20px;
+}
+
+button, select {
+	border: none;
+	color: rgba(255, 255, 255, .8);
+	background: rgba(0, 0, 0, .5);
+	padding: 20px;
+	border-radius: 20px 0 20px 0;
+}
+
+select:hover, button:hover {
+	background: rgba(0, 0, 0, .8);
 }
 
 .back {
-	background: rgba(0, 0, 0, .1);
-	color: rgba(0, 0, 0, .8);
-	width: 60%;
+	background: rgba(0, 0, 0, .5);
 }
 
 .back > div {
-	-webkit-transform: translate(80px, 140px) rotate(90deg);
-	-moz-transform: translate(80px, 140px) rotate(90deg);
-	-ms-transform: translate(80px, 140px) rotate(90deg);
-	-o-transform: translate(80px, 140px) rotate(90deg);
-	transform: translate(80px, 140px) rotate(90deg);
-	font-size: 21px;
-	color: rgba(0, 0, 0, .5);
+	-webkit-transform: translate(50px, 180px) rotate(90deg);
+	-moz-transform: translate(50px, 180px) rotate(90deg);
+	-ms-transform: translate(50px, 180px) rotate(90deg);
+	-o-transform: translate(50px, 180px) rotate(90deg);
+	transform: translate(50px, 180px) rotate(90deg);
+	color: rgba(255, 255, 255, .5);
+	font-size: 1.2em;
 }
