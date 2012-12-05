@@ -34,14 +34,29 @@ h1 {
 
 button, select {
 	border: none;
-	color: rgba(255, 255, 255, .8);
-	background: rgba(0, 0, 0, .5);
 	padding: 20px;
 	border-radius: 20px 0 20px 0;
 }
 
-select:hover, button:hover {
+button {
+	color: rgba(255, 255, 255, .8);
+	background: rgba(0, 0, 0, .5);
+}
+
+button:hover {
 	background: rgba(0, 0, 0, .8);
+}
+
+select {
+	background: rgba(255, 255, 255, .5);
+}
+
+select:hover {
+	background: rgba(255, 255, 255, .8);
+}
+
+select:focus {
+	outline: none;
 }
 
 .back {
@@ -56,4 +71,9 @@ select:hover, button:hover {
 	transform: translate(50px, 180px) rotate(90deg);
 	color: rgba(255, 255, 255, .5);
 	font-size: 1.2em;
+}
+
+::selection {
+	background: rgba(0, 0, 0, .5);
+	color: white;
 }
