@@ -29,7 +29,7 @@
 
   // Helper to add vendor 
 
-  var vendor = function (style) {
+  function vendor(style) {
     for (var key in style) {
       style[prefix + key] = style[key];
     };
@@ -40,9 +40,9 @@
    * Perform pretty css3 folding animation when `this` element is hovered.
    *
    * @param opts
-   * @option opts [String|Number] width
-   * @option opts [String|Number] height
-   * @option opts [String] type
+   * @option opts {String|Number} width
+   * @option opts {String|Number} height
+   * @option opts {String} type
    */
 
   $.fn.origami = function (opts) {
@@ -143,7 +143,7 @@
     // Add some helpers to add shadows
     if (opts.shadows) {
 
-      var gradient = function (from, to) {
+      function gradient(from, to) {
         var s = '';
 
         s += 'linear-gradient(right,rgba(0, 0, 0, '+from+') 0%,'
@@ -151,7 +151,7 @@
         return prefix + s;
       };
 
-      var contrast = function (arr, coef) {
+      function contrast(arr, coef) {
         var result, i, val;
 
         result = [];
@@ -196,7 +196,7 @@
 
     // When hovered...
 
-    var on = function () {
+    function on() {
       var translate = 'translate3d(' + (fragWidth - 1) + 'px,0,0)'
         , move
 
@@ -219,8 +219,7 @@
       var arr = []
         , alpha
         , prev = 0.6
-
-      for (var i = 0 ; pts[i] ; i++)
+      for (var i = 0 ; i < pts.length ; i++)
         arr.push(1 - (((pts[i] + 180) / 360) % 1));
 
       arr = contrast(arr, 2);
@@ -237,7 +236,7 @@
 
     // When unhovered...
 
-    var off = function () {
+    function off() {
       var translate = 'translate3d(' + fragWidth + 'px,0,0)'
         , move
 
@@ -254,15 +253,17 @@
 
     };
 
-    // Bind hover event!
-
-    $this.hover(on, off);
-
     /**
      * Add `foldable` class to the object to access into css
      */
 
     $this.addClass('foldable');
+
+    /**
+     * Expose on/off animations
+     */
+
+    return { on: on, off: off };
 
   };
 
