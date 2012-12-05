@@ -23,7 +23,7 @@ function getAnim(index, debug) {
   switch (typeof ex) {
     case "function": // With equation :
       var str = "f(x) =";
-      str += /\{.+return(.+);\}/.exec(ex.toString().replace(/\n/g, ""))[1];
+      str += /\{.+return(.+);?\}/.exec(ex.toString().replace(/\n/g, ""))[1];
       $('#example .back').html('<div>' + str + '</div>');
       return $('#example').origami({
         width: 400,
