@@ -36,6 +36,15 @@ button, select {
 	border: none;
 	padding: 20px;
 	border-radius: 20px 0 20px 0;
+	transition: .4s;
+	-o-transition: .4s;
+	-ms-transition: .4s;
+	-moz-transition: .4s;
+	-webkit-transition: .4s;
+}
+
+button:hover, select:hover {
+	border-radius: 0 20px 0 20px;
 }
 
 button {

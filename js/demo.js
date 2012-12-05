@@ -53,7 +53,7 @@ function getAnim(index, debug) {
 
 // default
 
-var anim = getAnim($('#examples').val(), debug)
+var anim = getAnim($('#examples').val(), false)
   , debug = false
 
 /**
