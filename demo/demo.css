@@ -1,0 +1,26 @@
+body {
+  font-family: arial, sans-serif;
+  padding: 42px;
+  background: #eee;
+}
+
+h1 > span {
+  color: #aaa;
+}
+
+.picture {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px #ccc;
+}
+
+.back > div {
+  box-sizing: border-box;
+  padding: 10px 10px 10px 100px;
+}
+
+.back p {
+  color: #666;
+}

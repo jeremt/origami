@@ -1,50 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Origami</title>
+    <title>Origami - tests</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="lib/origami.css">
-    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="demo/demo.css" />
   </head>
   <body>
-
-    <!-- Title -->
-
-    <h1>Origami JS</h1>
-    <p class="subtitle">Make pretty 'folding' animations using suites or equations.</p>
-    <div id="dashboard">
-      <select id="examples">
-        <option value="affine">Affine</option>
-        <option value="polynome">Polynome</option>
-        <option value="cosinus">Cosinus</option>
-        <option value="tangente">Tangente</option>
-        <option value="droite">Droite</option>
-        <option value="saw">Saw</option>
-      </select>
-      <button id="on">On</button>
-      <button id="off">Off</button>
-      <button id="debug">Debug</button>
-    </div>
-
-    <div id="example" class="box">
-      <div class="back"></div>
-    </div>
-
-    <!-- Include jquery -->
-
+    <h1>Tests</h1>
+    <ul>
+      <li><a href="float.html">Test gallery float left</a></li>
+      <li><a href="inlineblock.html">Test gallery inline-block</a></li>
+    </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
-    <!-- ...and origami plugin -->
-
     <script src="lib/origami.js"></script>
-
-    <!-- finaly, use it into your own script! -->
-
-    <script src="js/demo.js"></script>
-
-    <!-- and maybe github ribbon -->
-
-    <a href="https://github.com/JeremieT/origami"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+    <script src="demo/demo.js"></script>
 
   </body>
 </html>
