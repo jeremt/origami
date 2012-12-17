@@ -53,7 +53,9 @@ function getAnim(index, debug) {
 
 // default
 
-var anim = getAnim($('#examples').val(), false)
+var $examples = $('#examples')
+  , $example = $('#example')
+  , anim = getAnim($examples.val(), false)
   , debug = false
 
 /**
@@ -62,24 +64,22 @@ var anim = getAnim($('#examples').val(), false)
 
 $('#debug').on('click', function () {
   debug = !debug;
+  $(this).text(debug ? 'Random' : 'White')
+  anim = getAnim($examples.val(), debug);
+  $example.hover(anim.on, anim.off);
 })
 
 /**
  * Switch animation.
  */
 
-$('#examples').on('change', function () {
+$examples.on('change', function () {
   anim = getAnim(this.value, debug);
+  $example.hover(anim.on, anim.off);
 });
 
 /**
  * Trigger animation
  */
 
-$("#on").on('click', function () {
-  anim.on();
-});
-
-$('#off').on('click', function () {
-  anim.off();
-})
+$example.hover(anim.on, anim.off);

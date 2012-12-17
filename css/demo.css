@@ -68,18 +68,25 @@ select:focus {
 	outline: none;
 }
 
+.info {
+	color: #ccc;
+	font-size: 1.2em;
+	padding-left: 20px;
+}
+
 .back {
 	background: rgba(0, 0, 0, .5);
 }
 
 .back > div {
-	-webkit-transform: translate(50px, 180px) rotate(90deg);
-	-moz-transform: translate(50px, 180px) rotate(90deg);
-	-ms-transform: translate(50px, 180px) rotate(90deg);
-	-o-transform: translate(50px, 180px) rotate(90deg);
-	transform: translate(50px, 180px) rotate(90deg);
+	-webkit-transform: translate(-150px, 0px) rotate(90deg);
+	-moz-transform: translate(-150px, 0px) rotate(90deg);
+	-ms-transform: translate(-150px, 0px) rotate(90deg);
+	-o-transform: translate(-150px, 0px) rotate(90deg);
+	transform: translate(-150px, 0px) rotate(90deg);
 	color: rgba(255, 255, 255, .5);
 	font-size: 1.2em;
+	height: 400px;
 }
 
 ::selection {
