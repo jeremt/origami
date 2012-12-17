@@ -57,6 +57,8 @@ TODO
 ----
 
 - Translate variables names in english
+- Check if the image is loaded in demo
+- Make a Origami object to use it without jQuery
 
 License
 -------
