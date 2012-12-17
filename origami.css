@@ -7,10 +7,10 @@
  */
 
 /**
- * Default `foldable` elems behaviours
+ * Default `origami` elems behaviours
  */
 
-.foldable {
+.origami {
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
   -o-perspective: 600px;
@@ -23,12 +23,12 @@
  * Overlay
  */
 
-.foldable .overlay {
+.origami .overlay {
   height: 100%;
   position: absolute;
 }
 
-.foldable:hover .overlay {
+.origami:hover .overlay {
   opacity: 1;
 }
 
@@ -36,7 +36,7 @@
  * Fragment
  */
 
-.foldable .fragment{
+.origami .fragment{
   height: 100%;
   z-index: 100;
   
@@ -64,7 +64,7 @@
  * Image
  */
 
-.foldable img {
+.origami img {
   position: absolute;
   z-index: 0;
   -webkit-transition: left 0.3s ease-in-out;
