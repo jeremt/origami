@@ -15,27 +15,31 @@ var examples = {
  * Get the animation for a specific example.
  */
 
-function getAnim(index, debug) {
-  var src = debug ? "img/white.png" : "http://lorempixel.com/400/400";
-  $('#example').html('<div class="back"></div><img src="' + src + '">');
+function getAnim(index, debug, cb) {
+  var src = debug ? "img/white.png" : "http://lorempixel.com/400/400"
+    , ex = examples[index]
 
-  var ex = examples[index];
+  $('#example').html('<div class="back"></div><img src="' + src + '">')
+
   switch (typeof ex) {
+
     case "function": // With equation :
-      var str = "f(x) =";
-      str += /\{.+return(.+);?\}/.exec(ex.toString().replace(/\n/g, ""))[1];
-      $('#example .back').html('<div>' + str + '</div>');
-      return $('#example').origami({
+      var str = "f(x) ="
+      str += /\{.+return(.+);?\}/.exec(ex.toString().replace(/\n/g, ""))[1]
+      $('#example .back').html('<div>' + str + '</div>')
+      $('#example').origami({
         width: 400,
         height: 400,
         frags: 10,
         shadows: true,
         f: ex
-      })
+      }, cb)
+      break;
+
     case "object": // Or suites :
-      var str = ex.type + ": n = " + ex.n + ", pas = " + ex.pas;
-      $('#example .back').html('<div>' + str + '</div>');
-      return $('#example').origami({
+      var str = ex.type + ": n = " + ex.n + ", pas = " + ex.pas
+      $('#example .back').html('<div>' + str + '</div>')
+      $('#example').origami({
         width: 400,
         height: 400,
         frags: 10,
@@ -45,9 +49,11 @@ function getAnim(index, debug) {
           n: ex.n,
           pas: ex.pas
         }
-      })
+      }, cb)
+      break;
+
     default: // Else...
-      return console.warn("Invalid example.");
+      return console.warn("Invalid example.")
   }
 }
 
@@ -55,18 +61,22 @@ function getAnim(index, debug) {
 
 var $examples = $('#examples')
   , $example = $('#example')
-  , anim = getAnim($examples.val(), false)
   , debug = false
+
+getAnim($examples.val(), false, function (anim) {
+  $example.hover(anim.on, anim.off)
+})
 
 /**
  * Switch debug.
  */
 
 $('#debug').on('click', function () {
-  debug = !debug;
+  debug = !debug
   $(this).text(debug ? 'Random' : 'White')
-  anim = getAnim($examples.val(), debug);
-  $example.hover(anim.on, anim.off);
+  getAnim($examples.val(), debug, function (anim) {
+    $example.hover(anim.on, anim.off)
+  })
 })
 
 /**
@@ -74,12 +84,7 @@ $('#debug').on('click', function () {
  */
 
 $examples.on('change', function () {
-  anim = getAnim(this.value, debug);
-  $example.hover(anim.on, anim.off);
-});
-
-/**
- * Trigger animation
- */
-
-$example.hover(anim.on, anim.off);
+  getAnim(this.value, debug, function (anim) {
+    $example.hover(anim.on, anim.off)
+  })
+})
